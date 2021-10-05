@@ -6,7 +6,7 @@ Dictionaries are obects that can contain other objects like lists. Each object i
 
 ### Creating and editing dictionaries
 
-### Creation
+#### Creation
 
 ```python
 # 1st way
@@ -44,7 +44,7 @@ Ex:
 person = {'age': 23, 'name': 'Isaac Keita'}
 ```
 
-### Deleting from dictionaries
+#### Deleting from dictionaries
 
 Similar to lists, there are two ways to delete from dictionaries.
 
@@ -63,5 +63,94 @@ del person['age']
 person.pop('country')
 ```
 
+In additon to deleting the key and associated value, pop also returns the deleted value.
 
 
+NB: Dictionaries are sometimes used to store functions.
+
+Ex:
+
+```python
+def sayHi():
+	print("Hi")
+
+def buzz():
+	print("Buzz")
+
+# Storing
+my_functions = {}
+my_functions["hi"] = sayHi
+my_functions["bzz"] = buzz
+
+# Calling
+my_functions["hi"]()
+my_functions["bzz"]()
+
+```
+#### Looping through dictionary
+
+* We can loop through a dictionary and get all the keys.
+
+Ex:
+
+```python
+animals = {'lions': 15, 'Zebra': 32}
+
+for id_key in animals.keys():
+	print(id_key)
+```
+
+* We can also loop through a dictionary and get all the values.
+
+Ex:
+
+```python
+animals = {'lions': 15, 'Zebra': 32}
+
+for value in animals.values():
+	print(value)
+```
+
+* We can as well loop through a dictionary and get all the keys and values.
+
+Ex:
+
+```python
+animals = {'lions': 15, 'Zebra': 32}
+
+for idx_key, value in animals.items():
+	print("key: {} Value: {}".format(idx_key, value))
+```
+### Dictionaries and function parameters
+
+Similarly to tuples and simple parameters, we can also capture named parameters with dictionaries.
+
+Ex:
+
+```python
+def my_parameters(**params):
+	print("my named params {}".format(params))
+```
+
+We use * for unnamed parameters and ** for named parameters.
+
+Knowing this, we can capture both named and unnamed parameters.
+
+Ex:
+
+```python
+def my_parameters(*params, **nparams):
+	print("My simple params {} and my named params {}".format(params, nparams))
+```
+
+#### We can convert dictionaries into named parameters of a function
+
+Ex:
+
+```python
+params = {"sep":" >> ", "end":" -\n " }
+
+print("This", "Is", "Us", "!", **params)
+```
+
+To indicate to python the dictionary should be transmitted as a parameter, we put the double star before the name ** in our function call.
