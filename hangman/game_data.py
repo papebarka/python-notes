@@ -33,4 +33,4 @@ word_lists = [
     "year",
 ]
 
-score_filename = "hangman_score"
+score_file = "scores"

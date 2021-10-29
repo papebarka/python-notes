@@ -2,9 +2,13 @@ import game_data as game
 import random
 import pickle
 
-# Player get to guess a word
+total_score = 0
+player_name = ''
 
-# When the game starts, it asks he user to enter his name
+def player_information():
+    name = input("What is our name?: ")
+    with open(game.score_file, 'wb') as scores:
+        pass
 
 def random_word():
     """ Choose a random word from the word list"""
